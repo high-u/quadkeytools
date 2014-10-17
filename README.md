@@ -5,7 +5,7 @@ A library to calculate unique keys that represent tiles in a quadtree grid for g
 ### Projection
 In order to map a 2D plane on to the globe you have to use projection.  This library uses Mercator projection.  Which looks like this:
 
-![Mercator Projection Image](mercator.jpg "Mercator Projection") 
+![Mercator Projection Image](https://bytebucket.org/steele/quadkeytools/raw/c06bb33e9bdcfb925c84478116dd44694c24c59c/mercator.jpg "Mercator Projection") 
 
 ### Detail Level
 Once the globe is projected on to a 2D plane we can cut it up into quadrants then quadruple it's area and cut each quadrant into subquadrants.  Each time the plane is increased in size we increase the detail level of each quadrant.  
@@ -13,7 +13,7 @@ Once the globe is projected on to a 2D plane we can cut it up into quadrants the
 ### QuadkeyTools
 Every time we increase the detail level we mark each subquadrant with a 0, 1, 2, or 3.  Looks something like this:
 
-![Quadtree](tiles.jpg "Building The Quadtree")
+![Quadtree](https://bytebucket.org/steele/quadkeytools/raw/c06bb33e9bdcfb925c84478116dd44694c24c59c/tiles.jpg "Building The Quadtree")
 
 ## Installation
     npm install quadkeytools
