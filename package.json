@@ -13,6 +13,11 @@
     "quadtree",
     "location"
   ],
+  "homepage": "https://bitbucket.org/steele/quadkeytools",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:steele/quadkeytools.git"
+  },
   "author": "Steele Nelson <snelson21@gmail.com>",
   "license": "BSD-3-Clause",
   "dependencies": {},
