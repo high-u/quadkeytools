@@ -157,4 +157,45 @@ describe('quadkey', function() {
 			quadkey.inside(origin, parent).should.be.true;
 		});
 	});
+	describe('sibling', function() {
+		it('should return a sibling', function() {
+			var key = '00000'
+			  , sib = quadkey.sibling(key, 'left');
+			sib.should.be.a.String.with.valueOf('11111');
+			sib = quadkey.sibling(key, 'up')
+			sib.should.be.a.String.with.valueOf('22222');
+
+			key = '33333';
+			sib = quadkey.sibling(key, 'right');
+			sib.should.be.a.String.with.valueOf('22222');
+			sib = quadkey.sibling(key, 'down');
+			sib.should.be.a.String.with.valueOf('11111');
+
+			key = '11111';
+			sib = quadkey.sibling(key, 'right');
+			sib.should.be.a.String.with.valueOf('00000');
+			sib = quadkey.sibling(key, 'up');
+			sib.should.be.a.String.with.valueOf('33333');
+
+			key = '22222';
+			sib = quadkey.sibling(key, 'left');
+			sib.should.be.a.String.with.valueOf('33333');
+			sib = quadkey.sibling(key, 'down');
+			sib.should.be.a.String.with.valueOf('00000');
+
+			key = '001';
+			sib = quadkey.sibling(key, 'left');
+			sib.should.be.a.String.with.valueOf('000');
+
+			key = '';
+			sib = quadkey.sibling(key, 'left');
+			sib.should.be.a.String.with.valueOf('');
+		});
+		it('should fail with invalid quadkey character', function() {
+			var key = '456a';
+			assert.throws(function(){
+				quadkey.sibling(key, 'left');
+			}, Error);
+		});
+	});
 });
