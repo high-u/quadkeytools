@@ -56,6 +56,13 @@ Get all the children of a quadkey.  This will return an array of keys representi
       , key = '0123332111'
       , children = Quadkey.children(key);
 
+### sibling( quadkey, direction )
+Get a sibling of a quadkey.  This will return the key of a sibling in a particular direction.  Directions can be 'left' 'right' 'up' or 'down'.
+
+    var Quadkey = require('quadkeytools')
+      , key = '001'
+      , sibling = Quadkey.sibling(key, 'left')
+
 ### parent( quadkey )
 Get the parent of a quadkey.  This will return the quadkey that represents the parent quadrant in the previous detail level.
 
