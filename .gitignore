@@ -29,3 +29,7 @@ node_modules
 .settings
 .project
 .jshintrc
+
+# IntelliJ IDE
+/.idea/
+/.idea/vcs.xml
